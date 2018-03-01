@@ -1,0 +1,29 @@
+{
+  "name": "DeviceManagement",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "aws-sdk": "2.189.0",
+    "axios": "0.17.1",
+    "cors": "2.8.4",
+    "dynamodb": "1.1.1",
+    "dynamodb-doc": "1.0.0",
+    "express": "4.16.2",
+    "hbs": "4.0.1",
+    "joi": "13.1.2",
+    "localStorage": "1.0.3",
+    "moment": "2.20.1",
+    "request": "2.83.0"
+  },
+  "devDependencies": {
+    "expect": "22.1.0",
+    "mocha": "5.0.0",
+    "supertest": "3.0.0"
+  },
+  "engines": {
+    "node": "4.x"
+  }
+}

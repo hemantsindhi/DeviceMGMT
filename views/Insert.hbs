@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Device Info</title>
+        <style>
+           <style>
+            body{
+                width:80%;
+        margin:0 auto;
+        background:#f3f3f3;
+    }
+   
+            #tbl th{
+                background: #2b303b;
+                color:#fff;
+                padding:10px;
+            }
+            #tbl th,#tbl td {
+                border: 1px solid black;
+                }
+            .container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}    
+.container-1 input#search{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+        </style>
+        </style>
+    </head>
+    <body>
+        {{> menus}}
+    <form method="GET" action="/allDevice?search=true">
+      <table><tr><td>
+          <input type="text" name="search">
+          </td><td>
+              <input type="submit" value="Submit">
+              </td></tr></table>
+          </form>
+        <table id="tbl" style='font-size: 16px;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;'><tr>
+           <th>IMEI</th>
+           <th>Device Name</th>
+           <th>Device Modal</th>
+           <th>Owner</th>
+           <th>Updated On</th>
+            <th>Comment</th>
+             <th>Action</th>
+           </tr>
+           <tbody>
+
+            <form method="POST" action="/insertData">
+           <tr>
+               <td style="text-align:center"><input name="imei" type="text" />
+               <input type="hidden" name="fromEdit" value="1"></hidden>
+               </td>
+               <td style="text-align:center"><input name="deviceName"  {{isdisable}} type="text" value="{{deviceName}}"></td>
+                <td style="text-align:center"><input name="deviceModal"  {{isdisable}} type="text" value="{{deviceModel}}"></td>
+               <td style="text-align:center"><input name="owner"  {{isdisable}} type="text" value="{{owner}}"></td>
+               <td style="text-align:center"><input name="updatedon"  {{isdisable}} type="text" value="{{lastUpdatedOn}}"></td>
+                <td style="text-align:center"><input name="comment" {{isdisable}} type="text"  value="{{comment}}"></td>
+                 <td style="text-align:center;">
+                 <table padding="0" margin="0" border="0" style="border:none;"><tr>
+                <td style="border:none;"><a href="/allDevice" style="display:{{isnoneCancel}}"><img src="close.png" style="width:10px;height:15px;"></a></td>
+                <td style="border:none;"><input type="submit" style="display:{{isnoneCancel}}"></td>
+                </tr></table>
+               </td>
+           </tr>
+          </form>
+           </tbody>
+           </table>
+    
+       
+    </body>
+</html>

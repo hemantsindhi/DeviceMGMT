@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Device Information</title>
+  <link rel="stylesheet" href="css/device.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/device.js"></script>
+ 
+</head>
+
+<body>
+  <br>
+  <div class="titlefont"><a href="/allDevice"> {{toUpperCase title}}</a></div>
+  <br>
+  <br>
+  <div style="float:left">
+    <form method="GET" action="/allDevice?search=true">
+      <div class="box">
+        <div class="container-1">
+          <input type="search" name="search" id="search" placeholder="Search..." />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div style="float:right" class="addButton" onclick="dtr()">
+    <a >Add Device</a>
+  </div>
+  <br>
+  <br>
+  <br>
+  <hr>
+  <table id="tbl">
+    <tr>
+      <form name="myForm" method="POST" action="/insertData">
+        <th>&nbsp;&nbsp;IMEI
+          <br>
+          <div class="box">
+            <div class="coner-1">
+              <input type="search" name="imei" id="imei" placeholder="Search IMEI" style="display: none;" required>
+            </div>
+          </div>
+        </th>
+        <th>Device Name
+          <br>
+          <input type="search" name="deviceName" placeholder="Device Name" id="deviceName" style="display: none;" required>
+        </th>
+        <th>Device Model
+          <br>
+          <input type="search" name="deviceModal" id="deviceModal" placeholder="Device Model" style="display: none;" required>
+        </th>
+        <th class="owner">Owner
+          <br>
+          <input type="search" name="owner" id="owner" placeholder="Owner" required style="display: none;" required>
+        </th>
+        <th class="updatedon">
+          Updated On
+          <div id="updateon" style="display:none;">
+            <br>
+          </div>
+          <br>
+        </th>
+        <th>
+          Comment
+          <br>
+          <textarea cols="20" rows="1" name="comment" id="comment" style="display: none;"> </textarea>
+        </th>
+        <th style="width:80px;">
+          <span id="edit">Edit</span>
+          <br>
+         <img src="close.png" id="close" onclick="dtr()">
+          <input id="btnsubmit" type="submit"  value="Submit" style="display: none;">
+        </th>
+      </form>
+    </tr>
+    <tbody id="bdy">
+      {{#each items}}
+      <form method="POST" action="/insertData">
+        <tr style="display:{{this.record}}">
+          <td class="txt-left">
+            <div>
+              <span name="imei">&nbsp;&nbsp;&nbsp;{{this.IMEI}}</span>
+              <input name="imei" style="display:none" type="text" value="{{this.IMEI}}" />
+            </div>
+          </td>
+          <td class="txt-left">
+            <div>
+              <span name="deviceName">{{this.deviceName}}</span>
+              <input name="deviceName" style="display:none" type="search" value="{{this.deviceName}}" />
+            </div>
+          </td>
+          <td class="txt-left">
+            <div>
+              <span name="deviceModal">{{this.deviceModel}}</span>
+              <input name="deviceModal" style="display:none" type="search" value="{{this.deviceModel}}" />
+            </div>
+          </td>
+          <td class="txt-left" class="owner">
+            <div>
+              <span style="display:{{this.isEditS}}">{{this.owner}}</span>
+              <input name="owner" style="display:{{this.isEdit}}" type="search" value="{{this.owner}}" />
+            </div>
+          </td>
+          <td class="txt-left" class="updatedon">
+            <div class="fixwidth">
+              <span name="updatedon">{{dateFormat this.lastUpdatedOn}}</span>
+            </div>
+          </td>
+          <td class="txt-left" style="width:250px;">
+            <div>
+              <span style="display:{{this.isEditS}}">{{this.Comment}}</span>
+              <textarea name="comment" style="display:{{this.isEdit}}" cols="20" rows="1">{{this.Comment}}</textarea>
+            </div>
+          </td>
+          <td style="text-align:left">
+            <a href="/allDevice?edit=true&index={{@index}}" style=";display:{{this.isEditS}}">
+              <img src="edit.png" class="imgedit">
+            </a>
+            <table padding="0" margin="0" border="0" style="border:none;display:{{this.isEdit}}">
+              <tr>
+                <td class="alldeviceclose">
+                  <a href="/allDevice">
+                    <img src="close.png" alt="Cancel" class="alldeviceimgclose">
+                  </a>
+                </td>
+                <td style="border:none; padding-left:2px">
+                  <input type="submit"  value="Update" class="submitcolor">
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr style="display:{{this.nodata}}">
+          <td colspan="7">
+            No Record Found
+          </td>
+        </tr>
+      </form>
+
+      {{/each}}
+    </tbody>
+
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+body{
+    width:80%;
+margin:0 auto;
+background:#fff;
+min-width:800px;
+}
+#tbl th{
+      font-size: .9em;
+      padding-right: 20px;
+      white-space: nowrap;
+      text-align: left;
+}
+th input[type='search']{
+   padding: 7px;
+  margin-top: 5px;
+  margin-bottom: 6px;
+}
+th textarea{
+   padding: 3px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+
+}
+#bdy{
+  background: #fff;
+}
+#bdy tr {
+    border-top: 1px solid #b3b3b3 !important;
+}
+ .updatedon,.owner{
+   padding-right: 20px;
+ }
+ .fixwidth{
+     width:75px;
+ }
+  #bdy tr td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+td span{
+   font-size: .8em;
+   /* white-space: nowrap; */
+}
+
+#bdy tr:hover {
+background: #d3edf0 !important;
+}
+
+body, html {
+height: 100%;
+font-family: sans-serif;
+background: #f3f3f3;
+
+}
+
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: absolute; /* Stay in place */
+
+}
+
+
+/*---------------------------------------------*/
+.coner-1{
+width: 120px;
+vertical-align: middle;
+white-space: nowrap;
+position: relative;
+}    
+
+.coner-1 input[type='text']{
+border-radius: 5px;
+}
+.container-1{
+width: 300px;
+vertical-align: middle;
+white-space: nowrap;
+position: relative;
+}    
+.container-1 input#search{
+width: 300px;
+height: 40px;
+background: #fff;
+border: 1px solid #b3b3b3  !important;;
+font-size: 10pt;
+float: left;
+color: #2b303b;
+padding-left: 18px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+top: 10px;
+position: relative;
+}
+.addButton{
+float: right;
+background: #3d70b2;
+color: #fff;
+width: 102px;
+text-align: center;
+height: 32px;
+top: 17px;
+position: relative;
+}
+.addButton a{
+position: relative;
+top: 7px;
+font-size: 0.7em;
+font-family: arial;
+cursor: pointer;
+}
+.titlefont a{
+font-size:2em; 
+margin-top: 10px;
+cursor: pointer;
+text-decoration: none;
+color: #000;
+}
+
+#tbl{
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;margin-top:30px;
+}
+#close{
+    width:20px;height:20px;position:relative;top:4px;display:none;position:relative;top:7px;
+}
+.txt-left{
+    text-align:left
+}
+.imgedit{
+    width:15px;height:20px;
+}
+.alldeviceclose{
+    border:none;padding-right:0
+}
+.alldeviceimgclose{
+    width:20px;height:20px;position:relative;top:4px;
+}
+.submitcolor{
+    border:1px solid #f3f3f3;
+}

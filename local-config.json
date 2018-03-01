@@ -1,0 +1,23 @@
+[
+    {"name":"title","value":"GEMS Asset Management"},
+    {"name":"accessKeyId","value":"AKIAJION7CGVISOWV6WA"},
+    {"name":"secretAccessKey","value":"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"},
+    {"name":"region", "value": "eu-west-1"},
+    {"name":"tabledevices","value":"devices"},
+    {"name":"keyfiled","value":["IMEI","deviceName","deviceModel","owner","lastUpdatedOn","Comment"]},
+    {"name":"tablelogin","value":"userlogins"},
+    {"name":"tablelogs","value":"devicelogs"},
+    {"name":"publicpath","value":"/public"},
+    {"name":"partialpath","value":" /views/partials"},
+    {"name":"FilterExpression","value":"#username= :username and #password= :password"},
+    {"name":"alldevice","value":"allDevice.hbs"},
+    {"name":"login","value":"login.hbs"},
+    {"name":"dateformat","value":"DD-MMM-YYYY hh:mm:ss"},
+    {"name":"logintitle","value":"Login"},
+    {"name":"none","value":"none"},
+    {"name":"block","value":""},
+    {"name":"true","value":"true"},
+    {"name":"viewengine","value":"view engine"},
+    {"name":"hbs","value":"hbs"}
+    
+]

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Device Info</title>
+         <style>
+            #tbl th{
+                background: #2b303b;
+                color:#fff;
+                padding:10px;
+            }
+            #tbl th,#tbl td {
+                border: 1px solid black;
+                }
+             td input{
+        height:15px;
+        padding:10px;
+    }   
+ 
+        </style>
+    </head>
+    <body>
+        {{> header}}
+       
+        <br><br>
+        <table id="tbl" style='font-size: 16px;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;margin-top:30px;'><tr>
+           <th>IMEI</th>
+           <th>Device Name</th>
+           <th>Device Modal</th>
+           <th>Owner</th>
+           <th>Updated On</th>
+            <th>Comment</th>
+             <th>Action</th>
+           </tr>
+           <tbody>
+
+            <form method="GET" action="/insertData">
+           <tr>
+               <td style="text-align:center"><input name="imei" {{isdisable}} type="text" value="{{IMEI}}"/>
+               <input type="hidden" name="fromEdit" value="1"></hidden>
+               </td>
+               <td style="text-align:center"><input name="deviceName"  {{isdisable}} type="text" value="{{deviceName}}"></td>
+                <td style="text-align:center"><input name="deviceModal"  {{isdisable}} type="text" value="{{deviceModel}}"></td>
+               <td style="text-align:center"><input name="owner"  {{isdisable}} type="text" value="{{owner}}"></td>
+               <td style="text-align:center"><input name="updatedon"  {{isdisable}} type="text" value="{{lastUpdatedOn}}"></td>
+                <td style="text-align:center"><textarea name="comment" {{isdisable}} type="text"  row="3">{{comment}}</textarea></td>
+                 <td style="text-align:center;">
+                 <table padding="0" margin="0" border="0" style="border:none;"><tr>
+                <td style="border:none;"><a href="/allDevice" style="display:{{isnoneCancel}}"><img src="close.png" style="width:10px;height:15px;"></a></td>
+                <td style="border:none;"><input type="submit" style="display:{{isnoneCancel}}"></td>
+                </tr></table>
+               </td>
+           </tr>
+          </form>
+           </tbody>
+           </table>
+    
+       
+    </body>
+</html>
